@@ -7,7 +7,7 @@ import java.awt.event.*;
 
 class Welcome_Page implements ActionListener {
     JFrame f;
-    JLabel id,ll;
+    JLabel id,l1;
     JButton b;
 
     Welcome_Page() {
@@ -19,10 +19,10 @@ class Welcome_Page implements ActionListener {
         ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("icons/front.jpg"));
         Image i2 = i1.getImage().getScaledInstance(1400, 700, Image.SCALE_DEFAULT);
         ImageIcon i3 = new ImageIcon(i2);
-        JLabel ll = new JLabel(i3);
+        JLabel l1 = new JLabel(i3);
 
-        ll.setBounds(0, 150, 1360, 530);
-        f.add(ll);
+        l1.setBounds(0, 150, 1360, 530);
+        f.add(l1);
 
         b = new JButton("Continue");
         b.setBackground(Color.WHITE);
