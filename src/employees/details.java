@@ -69,7 +69,7 @@ class details implements ActionListener{
         }
         if(ae.getSource()==b3){
             f.setVisible(false);
-            new Review_Employee();
+            new Remove_Employee();
         }
         if(ae.getSource()==b4){
             f.setVisible(false);

@@ -13,7 +13,7 @@ class Welcome_Page implements ActionListener {
     Welcome_Page() {
 
         f = new JFrame("Employee Management System");
-        f.setBackground(Color.blue);
+        f.setBackground(Color.white);
         f.setLayout(null);
 
         ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("icons/front.jpg"));
@@ -68,6 +68,8 @@ class Welcome_Page implements ActionListener {
             }
         }
     public static void main(String[] args){
-            Welcome_Page f = new Welcome_Page();
-        }
+
+        Welcome_Page f = new Welcome_Page();
+
+    }
 }

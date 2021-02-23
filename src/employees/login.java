@@ -18,6 +18,7 @@ import java.sql.*;
             f = new JFrame("Login");
 
             f.setBackground(Color.white);
+            f.setLayout(null);
 
             l1 = new JLabel("Username");
             l1.setBounds(40, 20, 100, 30);
@@ -47,16 +48,18 @@ import java.sql.*;
             b1.setFont(new Font("times", Font.BOLD,15));
             b1.addActionListener(this);
             b1.setBackground(Color.BLUE);
+            b1.setForeground(Color.WHITE);
+            f.add(b1);
+
+            b2 = new JButton("Cancel");
+            b2.setBounds(180,140,120,30);
+            b2.setFont(new Font("times",Font.BOLD,15));
+            b2.setBackground(Color.BLUE);
             b2.setForeground(Color.WHITE);
             f.add(b2);
 
-            b2 = new JButton("Cancel");
-            b1.setBounds(180, 140, 120, 30);
-            b1.setFont(new Font("times", Font.BOLD,15));
             b2.addActionListener(this);
-            b1.setBackground(Color.BLUE);
-            b2.setForeground(Color.WHITE);
-            f.add(b2);
+
 
             f.getContentPane().setBackground(Color.WHITE);
 
