@@ -6,15 +6,15 @@ import java.awt.event.*;
 import java.io.*;
 import javax.swing.*;
 
+
 class Add_Employee implements ActionListener {
 
     JFrame f;
-    JLabel id, id1, id2, id3, id4, id5, id6, id7, id8, id9, id10, id11, id12, id13, id14, id15, id16, id17, lab, lab1;
-    JTextField t, t1, t2, t3, t4, t5, t6, t7, t8, t9, t10, t11, t12, t13;
-    JButton b, b1, b2, b3;
+    JLabel id,id1,id2,id3,id4,id5,id6,id7,id8,id9,id10,id15,lab,lab1;
+    JTextField t1,t2,t3,t4,t5,t6,t7,t8,t9;
+    JButton b,b1;
 
-    Add_Employee(int i) {
-    }
+    Add_Employee(int i) {}
 
     Add_Employee() {
         f = new JFrame("Add Employee");
@@ -63,7 +63,7 @@ class Add_Employee implements ActionListener {
 
         id4 = new JLabel("Date Of Birth");
         id4.setBounds(400, 200, 200, 30);
-        id4.setFont(new Font("serif", Font.BOLD, 20));
+        id4.setFont(new Font("times", Font.BOLD, 20));
         id15.add(id4);
 
         t4 = new JTextField();
@@ -72,7 +72,7 @@ class Add_Employee implements ActionListener {
 
         id5 = new JLabel("Address");
         id5.setBounds(50, 250, 100, 30);
-        id5.setFont(new Font("serif", Font.BOLD, 20));
+        id5.setFont(new Font("times", Font.BOLD, 20));
         id15.add(id5);
 
         t5 = new JTextField();
@@ -81,7 +81,7 @@ class Add_Employee implements ActionListener {
 
         id6 = new JLabel("City");
         id6.setBounds(400, 250, 100, 30);
-        id6.setFont(new Font("serif", Font.BOLD, 20));
+        id6.setFont(new Font("times", Font.BOLD, 20));
         id15.add(id6);
 
         t6 = new JTextField();
@@ -90,25 +90,25 @@ class Add_Employee implements ActionListener {
 
         id7 = new JLabel("State");
         id7.setBounds(50, 300, 100, 30);
-        id7.setFont(new Font("serif", Font.BOLD, 20));
+        id7.setFont(new Font("times", Font.BOLD, 20));
         id15.add(id7);
 
         t7 = new JTextField();
         t7.setBounds(200, 300, 150, 30);
         id15.add(t7);
 
-        id9 = new JLabel("Phone");
+        id9 = new JLabel("Zip:");
         id9.setBounds(400, 300, 100, 30);
-        id9.setFont(new Font("serif", Font.BOLD, 20));
+        id9.setFont(new Font("times", Font.BOLD, 20));
         id15.add(id9);
 
         t8 = new JTextField();
         t8.setBounds(600, 300, 150, 30);
         id15.add(t8);
 
-        id10 = new JLabel("Email");
+        id10 = new JLabel("Phone");
         id10.setBounds(50, 350, 100, 30);
-        id10.setFont(new Font("serif", Font.BOLD, 20));
+        id10.setFont(new Font("times", Font.BOLD, 20));
         id15.add(id10);
 
         t9 = new JTextField();
@@ -144,45 +144,42 @@ class Add_Employee implements ActionListener {
         f.setVisible(true);
         f.setSize(900, 700);
         f.setLocation(400, 150);
+    }
 
 
         public void actionPerformed (ActionEvent ae){
 
             String a = t1.getText();
-            String b = t2.getText();
+            String bb = t2.getText();
             String c = t3.getText();
-            String d = t3.getText();
-            String e = t3.getText();
-            String f = t3.getText();
-            String g = t3.getText();
-            String h = t3.getText();
-            String i = t3.getText();
-            String j = t3.getText();
-            String k = t3.getText();
+            String d = t4.getText();
+            String e = t5.getText();
+            String ff = t6.getText();
+            String g = t7.getText();
+            String h = t8.getText();
+            String i = t9.getText();
+            String pkey = null;
 
             if (ae.getSource() == b) {
-                conn cc = new conn() {
-                    String q = "insert into employee values('" + a + "','" + b + "','" + c + "','" + d + "','" + e + "','" + f + "','" + g + "','" + h + "','" + i + "','" + j + "','" + k + "')";
-                cc.s.executeUpdate(q);
-                JOptionPane.showMessageDialog(null,"Details Successfully Inserted");
-                f.setVisible(false);
-                new
-
-                    details();
+                try {
+                    conn cc = new conn();
+                    String q = "insert into employee values('" + pkey + "','" + a + "','" + bb + "','" + c + "','" + d + "','" + e + "','" + ff + "','" + g + "','" + h + "','" + i + "')";
+                    cc.s.executeUpdate(q);
+                    JOptionPane.showMessageDialog(null, "Details Successfully Inserted");
+                    f.setVisible(false);
+                    new details();
                 }catch(Exception ee){
-                    System.out.println("The error is:" + ee);
+                    System.out.println("The error is:"+ee);
                 }
-            } else if (ae.getSource() == b1) {
+            }else if(ae.getSource() == b1){
                 f.setVisible(false);
                 new details();
             }
         }
-        public static void main (String[ ]arg){
+        public static void main(String[] arg){
             new Add_Employee();
         }
-
     }
-}
 
 
-}
+
